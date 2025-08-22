@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Summary - Payroll System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="payroll-summary-container">
+        <h1>Payroll Summary</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Basic Salary</th>
+                    <th>Deductions</th>
+                    <th>Overtime</th>
+                    <th>Total Salary</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="payrollList">
+                <!-- Payroll records will be populated here -->
+            </tbody>
+        </table>
+        <button onclick="calculatePayroll()">Calculate Payroll</button>
+        <button onclick="exportPayrollData()">Export Payroll Data</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

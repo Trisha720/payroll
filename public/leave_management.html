@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Management - Payroll System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="leave-management-container">
+        <h1>Leave Management</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Leave Type</th>
+                    <th>Leave Dates</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="leaveList">
+                <!-- Leave requests will be populated here -->
+            </tbody>
+        </table>
+        
+        <button onclick="addLeaveRequest()">Add Leave Request</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

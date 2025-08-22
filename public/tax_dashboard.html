@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculation - Payroll System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tax-dashboard-container">
+        <h1>Tax Dashboard</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+                    <th>Tax Rate</th>
+                    <th>Tax Amount</th>
+                    <th>Net Salary</th>
+                </tr>
+            </thead>
+            <tbody id="taxList">
+                <!-- Tax records will be populated here -->
+            </tbody>
+        </table>
+        
+        <button onclick="updateTaxRates()">Update Tax Rates</button>
+        <button onclick="calculateTax()">Calculate Tax</button>
+        <button onclick="exportTaxData()">Export Tax Data</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

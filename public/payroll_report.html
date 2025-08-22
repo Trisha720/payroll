@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Report - Payroll System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="payroll-report-container">
+        <h1>Payroll Report</h1>
+        <form id="reportFilters">
+            <div class="form-group">
+                <label for="dateRange">Date Range:</label>
+                <input type="date" id="startDate" name="startDate" required>
+                <input type="date" id="endDate" name="endDate" required>
+            </div>
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <select id="department" name="department">
+                    <option value="All">All</option>
+                    <option value="HR">HR</option>
+                    <option value="IT">IT</option>
+                    <option value="Finance">Finance</option>
+                </select>
+            </div>
+            <button type="button" onclick="generateReport()">Generate</button>
+            <button type="button" onclick="downloadReport()">Download</button>
+        </form>
+        <div id="reportPreview"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

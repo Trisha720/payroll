@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add/Edit Employee - Payroll System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="employee-form-container">
+        <h1 id="formTitle">Add New Employee</h1>
+        <form id="employeeForm">
+            <div class="form-group">
+                <label for="employeeName">Name:</label>
+                <input type="text" id="employeeName" name="employeeName" required>
+            </div>
+            <div class="form-group">
+                <label for="employeeID">Employee ID:</label>
+                <input type="text" id="employeeID" name="employeeID" required>
+            </div>
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <select id="department" name="department" required>
+                    <option value="HR">HR</option>
+                    <option value="IT">IT</option>
+                    <option value="Finance">Finance</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="position">Position:</label>
+                <select id="position" name="position" required>
+                    <option value="Manager">Manager</option>
+                    <option value="Staff">Staff</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dateOfJoining">Date of Joining:</label>
+                <input type="date" id="dateOfJoining" name="dateOfJoining" required>
+            </div>
+            <div class="form-group">
+                <label for="contactInfo">Contact Info:</label>
+                <input type="text" id="contactInfo" name="contactInfo" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <button type="button" onclick="saveEmployee()">Save</button>
+            <button type="button" onclick="cancel()">Cancel</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

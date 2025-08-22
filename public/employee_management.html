@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management - Payroll System</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://wallpapers.com/images/featured/macbook-pro-4k-i7sngw1nwrasy0a0.jpg'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center items vertically */
+        }
+
+        .employee-management-container {
+            background: rgba(255, 255, 255, 0.7) url('') no-repeat center center; /* Container background */
+            background-size: cover; /* Ensures the image covers the container */
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 800px; /* Maximum width for larger screens */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-between; /* Space out buttons */
+            align-items: center; /* Align items vertically */
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            color: white;
+            background-color: #007bff; /* Button color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 250px; /* Fixed width for the search bar */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Merge table borders */
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd; /* Border for table rows */
+        }
+
+        th {
+            background-color: #f8f9fa; /* Header background */
+        }
+
+        /* Responsive design */
+        @media (max-width: 480px) {
+            .employee-management-container {
+                padding: 20px;
+            }
+
+            .actions {
+                flex-direction: column; /* Stack actions on small screens */
+                align-items: stretch; /* Stretch buttons */
+            }
+
+            button {
+                margin-bottom: 10px; /* Space between buttons */
+                width: 100%; /* Full width on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="employee-management-container">
+        <h1>Employee Management</h1>
+        <div class="actions">
+            <button onclick="addNewEmployee()">Add New Employee</button>
+            <input type="text" id="searchBar" placeholder="Search by Name or ID">
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Position</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="employeeList">
+                <!-- Employee rows will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

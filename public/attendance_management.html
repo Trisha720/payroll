@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management - Payroll System</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://wallpapers.com/images/high/macbook-pro-rocky-shore-carcrzjzpewukrhu.webp'); /* Background image for the whole page */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center content vertically */
+        }
+
+        .attendance-management-container {
+            background: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px; /* Maximum width for the container */
+            text-align: center; /* Center text in the container */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input[type="date"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%; /* Full width for the input */
+        }
+
+        button {
+            padding: 10px 20px;
+            color: white;
+            background-color: #007bff; /* Button color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px; /* Space above the table */
+            border-collapse: collapse; /* Collapse borders */
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd; /* Border for table cells */
+            text-align: left; /* Align text to the left */
+        }
+
+        th {
+            background-color: #f2f2f2; /* Light background for headers */
+        }
+
+        tbody tr:hover {
+            background-color: #f1f1f1; /* Highlight row on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="attendance-management-container">
+        <h1>Attendance Tracker</h1>
+        <input type="date" id="attendanceDate" required>
+        <button onclick="markAttendance()">Mark Attendance</button>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Attendance Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="attendanceList">
+                <!-- Attendance rows will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://wallpapers.com/images/high/coffee-work-best-laptop-5drq5kpo0j7ox2dr.webp'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center content vertically */
+        }
+
+        h1 {
+            color: #fff; /* White text color for the heading */
+            margin-bottom: 20px; /* Space below heading */
+            text-align: center; /* Center the heading */
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px; /* Maximum width for the form */
+            text-align: left; /* Align text in the form to the left */
+        }
+
+        label {
+            display: block; /* Display label as a block */
+            margin: 10px 0 5px; /* Space above and below labels */
+            color: #333; /* Dark text color for labels */
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: calc(100% - 22px); /* Full width minus padding */
+            margin-bottom: 15px; /* Space below inputs */
+        }
+
+        button {
+            padding: 10px 20px;
+            color: white;
+            background-color: #007bff; /* Button color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+        #taxResult {
+            margin-top: 20px;
+            font-size: 1.2em; /* Larger font size for results */
+            color: #fff; /* White text color for results */
+        }
+    </style>
+</head>
+<body>
+    <h1>Tax Calculation</h1>
+    
+    <form id="taxForm">
+        <label for="employeeId">Employee ID:</label>
+        <input type="text" id="employeeId" name="employeeId" required>
+        
+        <label for="salary">Salary:</label>
+        <input type="number" id="salary" name="salary" required>
+        
+        <label for="taxRate">Tax Rate (%):</label>
+        <input type="number" id="taxRate" name="taxRate" required>
+        
+        <button type="button" onclick="calculateTax()">Calculate Tax</button>
+    </form>
+    
+    <div id="taxResult"></div>
+
+    <script>
+        function calculateTax() {
+            const salary = parseFloat(document.getElementById('salary').value);
+            const taxRate = parseFloat(document.getElementById('taxRate').value);
+            const taxAmount = (salary * (taxRate / 100)).toFixed(2);
+            document.getElementById('taxResult').innerText = `Tax Amount: $${taxAmount}`;
+        }
+    </script>
+</body>
+</html>

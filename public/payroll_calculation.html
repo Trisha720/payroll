@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Calculation - Payroll System</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://wallpapers.com/images/high/macbook-pro-winter-sunset-mqlc9f8eeh162c0p.webp'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center content vertically */
+        }
+
+        .payroll-calculation-container {
+            background: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px; /* Maximum width for the container */
+            text-align: center; /* Center text in the container */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px; /* Space between form groups */
+            text-align: left; /* Align labels to the left */
+        }
+
+        label {
+            display: block; /* Display label as a block */
+            margin-bottom: 5px; /* Space below labels */
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: calc(100% - 22px); /* Full width minus padding */
+        }
+
+        button {
+            padding: 10px 20px;
+            color: white;
+            background-color: #007bff; /* Button color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 5px; /* Margin between buttons */
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+        #calculatedSalary {
+            margin-top: 20px;
+            font-size: 1.2em; /* Larger font size for results */
+        }
+    </style>
+</head>
+<body>
+    <div class="payroll-calculation-container">
+        <h1>Payroll Calculation</h1>
+        <form id="payrollForm">
+            <div class="form-group">
+                <label for="employeeID">Employee ID:</label>
+                <input type="text" id="employeeID" name="employeeID" required>
+            </div>
+            <div class="form-group">
+                <label for="basicSalary">Basic Salary:</label>
+                <input type="number" id="basicSalary" name="basicSalary" required>
+            </div>
+            <div class="form-group">
+                <label for="allowances">Allowances:</label>
+                <input type="number" id="allowances" name="allowances" required>
+            </div>
+            <div class="form-group">
+                <label for="deductions">Deductions:</label>
+                <input type="number" id="deductions" name="deductions" required>
+            </div>
+            <div class="form-group">
+                <label for="overtime">Overtime:</label>
+                <input type="number" id="overtime" name="overtime" required>
+            </div>
+            <button type="button" onclick="calculate()">Calculate</button>
+            <button type="button" onclick="savePayroll()">Save</button>
+            <button type="button" onclick="cancel()">Cancel</button>
+        </form>
+        <div id="calculatedSalary"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

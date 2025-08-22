@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Rate Update - Payroll System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tax-rate-update-container">
+        <h1>Tax Rate Update</h1>
+        <form id="taxRateForm">
+            <div class="form-group">
+                <label for="salaryRange">Salary Range:</label>
+                <input type="text" id="salaryRange" name="salaryRange" required>
+            </div>
+            <div class="form-group">
+                <label for="taxRate">Tax Rate (%):</label>
+                <input type="number" id="taxRate" name="taxRate" required>
+            </div>
+            <button type="button" onclick="saveTaxRate()">Save</button>
+            <button type="button" onclick="cancel()">Cancel</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
