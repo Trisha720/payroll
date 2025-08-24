@@ -1,115 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Payroll Management System</title>
     <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-image: url('https://t4.ftcdn.net/jpg/01/19/11/55/360_F_119115529_mEnw3lGpLdlDkfLgRcVSbFRuVl6sMDty.jpg'); /* Replace with your image path */
-            background-size: cover;
-            background-position: center;
-            height: 100vh; /* Full viewport height */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background-image: url("https://t4.ftcdn.net/jpg/01/19/11/55/360_F_119115529_mEnw3lGpLdlDkfLgRcVSbFRuVl6sMDty.jpg"); /* Replace with your image path */
+        background-size: cover;
+        background-position: center;
+        height: 100vh; /* Full viewport height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
+      .login-container {
+        background: #f8ff32cc; /* White background with transparency */
+        border-radius: 10px;
+        padding: 40px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 400px; /* Maximum width for larger screens */
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .forgot-password {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .forgot-password:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive design */
+      @media (max-width: 480px) {
         .login-container {
-            background: #f8ff32cc; /* White background with transparency */
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 400px; /* Maximum width for larger screens */
+          padding: 20px;
         }
 
         h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #333;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: calc(100% - 20px);
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
+          font-size: 24px; /* Smaller font for smaller screens */
         }
 
         button {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            background-color: #007bff;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
+          font-size: 14px; /* Smaller button text */
         }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        .forgot-password {
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .forgot-password:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive design */
-        @media (max-width: 480px) {
-            .login-container {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 24px; /* Smaller font for smaller screens */
-            }
-
-            button {
-                font-size: 14px; /* Smaller button text */
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="login-container">
-        <h1>Login</h1>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="button" onclick="login()">Login</button>
-            <a href="#" class="forgot-password">Forgot Password?</a>
+      <h1>Login</h1>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="button" onclick="login()">Login</button>
+        <a href="#" class="forgot-password">Forgot Password?</a>
+        <button
+          type="button"
+          id="showSignupBtn"
+          style="margin-top: 10px; background: #28a745"
+        >
+          Sign Up
+        </button>
+      </form>
+    </div>
+
+    <!-- Registration Modal -->
+    <div
+      id="signupModal"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div
+        style="
+          background: #fff;
+          padding: 30px;
+          border-radius: 8px;
+          max-width: 350px;
+          width: 90%;
+          position: relative;
+        "
+      >
+        <span
+          id="closeSignup"
+          style="
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 20px;
+          "
+          >&times;</span
+        >
+        <h2 style="text-align: center">Sign Up</h2>
+        <form id="signupForm">
+          <div class="form-group">
+            <label for="newUsername">Username:</label>
+            <input type="text" id="newUsername" name="newUsername" required />
+          </div>
+          <div class="form-group">
+            <label for="newPassword">Password:</label>
+            <input
+              type="password"
+              id="newPassword"
+              name="newPassword"
+              required
+            />
+          </div>
+          <button type="submit" style="background: #28a745">Register</button>
         </form>
+        <div
+          id="signupMsg"
+          style="margin-top: 10px; text-align: center; color: red"
+        ></div>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+    <script>
+      // Show/Hide Signup Modal
+      document.getElementById("showSignupBtn").onclick = function () {
+        document.getElementById("signupModal").style.display = "flex";
+      };
+      document.getElementById("closeSignup").onclick = function () {
+        document.getElementById("signupModal").style.display = "none";
+      };
+      // Handle Registration
+      document.getElementById("signupForm").onsubmit = async function (e) {
+        e.preventDefault();
+        const username = document.getElementById("newUsername").value;
+        const password = document.getElementById("newPassword").value;
+        const res = await fetch("/api/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password }),
+        });
+        const data = await res.json();
+        document.getElementById("signupMsg").style.color = data.success
+          ? "green"
+          : "red";
+        document.getElementById("signupMsg").innerText = data.message;
+        if (data.success)
+          setTimeout(() => {
+            document.getElementById("signupModal").style.display = "none";
+          }, 1500);
+      };
+    </script>
+  </body>
 </html>
