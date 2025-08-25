@@ -49,8 +49,3 @@ app.get("/tax", (_req, res) => {
 
 // Export the app to be used in server.js
 module.exports = app;
-// At the top
-const authRoutes = require("./routes/auth");
-
-// After other routes
-app.use("/api", authRoutes);

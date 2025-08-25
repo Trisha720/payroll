@@ -86,6 +86,7 @@ async function login() {
   const data = await res.json();
   if (data.success) {
     alert("Login successful!");
+    // Redirect to dashboard or home
     window.location.href = "/dashboard.html";
   } else {
     alert(data.message || "Login failed");
