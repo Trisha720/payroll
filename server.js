@@ -67,6 +67,24 @@ app.post("/api/login", (req, res) => {
   );
 });
 
+// ❌ Insecure example: DO NOT USE IN REAL APP
+app.post("/insecure-login", (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  // Vulnerable to SQL Injection!
+  const sql = `SELECT * FROM users WHERE username='${username}' AND password='${password}'`;
+
+  db.query(sql, (err, results) => {
+    if (err) throw err;
+    if (results.length > 0) {
+      res.send("Login Successful (but vulnerable to SQL Injection!)");
+    } else {
+      res.send("Invalid credentials");
+    }
+  });
+});
+
 app.listen(PORT, () => {
   console.log(
     `🚀 Payroll Management Server running at http://localhost:${PORT}`
